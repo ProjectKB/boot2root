@@ -994,7 +994,7 @@ whose movements we control on the computer screen using simple instructions.
 
 We take out the **turtle** file from the VM:
 ```bash
-$ scp thor@192.168.1.19:/home/thor/bomb ~/boot2root/bomb
+$ scp thor@192.168.1.19:/home/thor/turtle ~/boot2root/turtle
 ```
 
 We import the library (impossible to use it with python3, but ok with python2) and convert the **turtle** file to use it:
