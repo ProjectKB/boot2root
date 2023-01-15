@@ -80,15 +80,15 @@ $ dirb https://192.168.1.19 ~/Applications/dirb/wordlists/small.txt | grep +
 + https://192.168.1.19/webmail/include (CODE:403|SIZE:296)
 ```
 
-We found 4 endpoints:
+We find 4 endpoints:
 
-![](./img/cgi-bin.png) 
+cgi-bin: <br> ![](./img/cgi-bin.png) 
 
 N.B: We now know that we're on **Apache** webserver
 
-![](./img/forum.png)
-![](./img/phpmyadmin.png)
-![](./img/webmail.png)
+forum: <br>![](./img/forum.png)
+phpmyadmin: <br>![](./img/phpmyadmin.png)
+webmail: <br>![](./img/webmail.png)
 
 ## 3. Forum
 There are nothing interesting except for the post **"Probleme login ?"**, it looks like server logs of someone 
