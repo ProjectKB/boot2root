@@ -87,8 +87,8 @@ cgi-bin: <br> ![](./img/cgi-bin.png)
 N.B: We now know that we're on **Apache** webserver
 
 forum: <br>![](./img/forum.png)
-phpmyadmin: <br>![](./img/phpmyadmin.png)
-webmail: <br>![](./img/webmail.png)
+<br>phpmyadmin: <br>![](./img/phpmyadmin.png)
+<br>webmail: <br>![](./img/webmail.png)
 
 ## 3. Forum
 There are nothing interesting except for the post **"Probleme login ?"**, it looks like server logs of someone 
