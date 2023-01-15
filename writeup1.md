@@ -1215,7 +1215,6 @@ Then, we can find what we're looking for:
 ```bash
 (gdb) p system
 $1 = {<text variable, no debug info>} 0xb7e6b060 <system>
-(gdb)
 ```
 ```bash
 (gdb) find __libc_start_main,+99999999,"/bin/sh"
