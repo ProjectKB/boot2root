@@ -82,7 +82,10 @@ $ dirb https://192.168.1.19 ~/Applications/dirb/wordlists/small.txt | grep +
 
 We found 4 endpoints:
 
-![](./img/cgi-bin.png) <br>N.B: We now know that we're on **Apache** webserver 
+![](./img/cgi-bin.png) 
+
+N.B: We now know that we're on **Apache** webserver
+
 ![](./img/forum.png)
 ![](./img/phpmyadmin.png)
 ![](./img/webmail.png)
@@ -188,7 +191,7 @@ We're in!
 
 ## 6. FTP
 
-We download the two files with the **get** command.
+We download the two files with the `get` command.
 ```bash
 $ cat README
 Complete this little challenge and use the result as password for user 'laurie' to login in ssh
@@ -957,11 +960,11 @@ void secret_phase(void)
 
 There are two files in the repo:
 ```bash
-$ cat README
+thor@BornToSecHackMe:~$ cat README
 Finish this challenge and use the result as password for 'zaz' user.
 ```
 ```bash
-$ head turtle
+thor@BornToSecHackMe:~$ head turtle
 Tourne gauche de 90 degrees
 Avance 50 spaces
 Avance 1 spaces
@@ -987,6 +990,11 @@ To illustrate this, and to have a little fun with objects other than numbers,
 we will explore a Python module that allows us to make "turtle graphics", 
 that is to say geometric drawings corresponding to the trail left behind by a small virtual "turtle",
 whose movements we control on the computer screen using simple instructions.
+```
+
+We take out the **turtle** file from the VM:
+```bash
+$ scp thor@192.168.1.19:/home/thor/bomb ~/boot2root/bomb
 ```
 
 We import the library (impossible to use it with python3, but ok with python2) and convert the **turtle** file to use it:
@@ -1162,9 +1170,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 Segmentation fault (core dumped)
 ```
 
-We're going to perform a **ret2libc**, we need addresses of **system** and the string **"/bin/sh"**.
+We're going to perform a [ret2libc](https://beta.hackndo.com/retour-a-la-libc/), we need addresses of **system** and the string **"/bin/sh"**.
 
-First we launch **gdb** and **disassemble** main to find a random **breakpoint**:
+First we launch **gdb** and disassemble main to find a random **breakpoint**:
 ```bash
 (gdb) disas main
 Dump of assembler code for function main:
