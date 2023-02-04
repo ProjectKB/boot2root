@@ -2,6 +2,11 @@
 
 Repeat steps of the **writeup1** until you are log on zaz's ssh session.
 
+Mdp:
+```bash
+646da671ca01bb5d84dbb5fb2238dc8e
+```
+
 We already know that the binary `exploit_me` is vulnerable to **buffer overflow** but 
 this time we're going to use a variant of the `ret2libc` by using an **environment variable**
 and a **payload**.
