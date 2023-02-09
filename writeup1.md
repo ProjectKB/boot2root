@@ -1041,6 +1041,7 @@ $ scp thor@192.168.1.19:/home/thor/turtle ~/boot2root/turtle
 We import the library (impossible to use it with python3, but ok with python2) and convert the **turtle** file to use it:
 ```python
 import turtle
+import argparse as a
 
 
 def get_nb(line):
@@ -1048,7 +1049,13 @@ def get_nb(line):
 
 
 if __name__ == '__main__':
-    f = open("turtle", "r")
+    argparse = a.ArgumentParser()
+    argparse.add_argument(
+        "file", help="file containing the optimization problem")
+
+    args = argparse.parse_args()
+
+    f = open(args.file, "r")
     file = f.readlines()
     f.close()
 
@@ -1074,90 +1081,77 @@ We get: <br>![](./img/turtle-all.png)
 
 It looks like letters, but it's not really clear. 
 In the **turtle** file we can see there are new line between instructions,
-so we isolate each part by modifying the above code:
-```python
-...
-
-for line in lines:
-    if line == "\n":
-        print("")
-    elif "gauche" in line:
-        print("turtle.left(" + str(get_nb(line)) + ")")
-    elif "droite" in line:
-        print("turtle.right(" + str(get_nb(line)) + ")")
-    elif "Avance" in line:
-        print("turtle.forward(" + str(get_nb(line)) + ")")
-    elif "Recule":
-        print("turtle.backward(" + str(get_nb(line)) + ")")
-
-...
-```
+so we isolate each part and run the program on each of them.
 
 We get:
 ```text
-turtle.left(90)
-turtle.forward(50)
-turtle.forward(1)
-turtle.left(1)
-turtle.forward(1)
-turtle.left(1)
-turtle.forward(1)
-turtle.left(1)
-turtle.forward(1)
-turtle.left(1)
-turtle.forward(1)
+Tourne gauche de 90 degrees
+Avance 50 spaces
+Avance 1 spaces
+Tourne gauche de 1 degrees
+Avance 1 spaces
+Tourne gauche de 1 degrees
+Avance 1 spaces
+Tourne gauche de 1 degrees
+Avance 1 spaces
+Tourne gauche de 1 degrees
+Avance 1 spaces
+Tourne gauche de 1 degrees
+Avance 1 spaces
 ...
 ```
 
 Who give us: <br>![](./img/turtle-s.png)
 
 ```text
-turtle.forward(210)
-turtle.backward(210)
-turtle.right(90)
-turtle.forward(120)
+Avance 210 spaces
+Recule 210 spaces
+Tourne droite de 90 degrees
+Avance 120 spaces
 ```
 
 Who give us: <br>![](./img/turtle-l.png)
 
 ```text
-turtle.right(10)
-turtle.forward(200)
-turtle.right(150)
-turtle.forward(200)
-turtle.backward(100)
-turtle.right(120)
-turtle.forward(50)
+Tourne droite de 10 degrees
+Avance 200 spaces
+Tourne droite de 150 degrees
+Avance 200 spaces
+Recule 100 spaces
+Tourne droite de 120 degrees
+Avance 50 spaces
 ```
 
 Who give us: <br>![](./img/turtle-a.png)
 
 ```text
-turtle.left(90)
-turtle.forward(50)
-turtle.forward(1)
-turtle.left(1)
-turtle.forward(1)
-turtle.left(1)
-turtle.forward(1)
-turtle.left(1)
-turtle.forward(1)
-turtle.left(1)
-turtle.forward(1)
+Tourne gauche de 90 degrees
+Avance 50 spaces
+Avance 1 spaces
+Tourne gauche de 1 degrees
+Avance 1 spaces
+Tourne gauche de 1 degrees
+Avance 1 spaces
+Tourne gauche de 1 degrees
+Avance 1 spaces
+Tourne gauche de 1 degrees
+Avance 1 spaces
+Tourne gauche de 1 degrees
+Avance 1 spaces
 ...
 ```
 
 Who give us: <br>![](./img/turtle-s.png)
 
 ```text
-turtle.forward(100)
-turtle.backward(200)
-turtle.forward(100)
-turtle.right(90)
-turtle.forward(100)
-turtle.right(90)
-turtle.forward(100)
-turtle.backward(200)
+Avance 100 spaces
+Recule 200 spaces
+Avance 100 spaces
+Tourne droite de 90 degrees
+Avance 100 spaces
+Tourne droite de 90 degrees
+Avance 100 spaces
+Recule 200 spaces
 ```
 
 Who give us: <br>![](./img/turtle-h.png)
