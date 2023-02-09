@@ -29,6 +29,14 @@ PORT    STATE SERVICE
 ```
 
 We get `192.168.1.19`, we can see that **http** port is open.
+
+### Second way for school
+
+We don't have the possiblity to use `nmap` then after finding the host ip we can perform a **ping loop** 
+on every address of the subnetwork:
+```bash
+$ for i in $(seq 254); do ping -c1 -W1 192.168.56.$i & done | grep from
+```
    
 ## 2. Explore Webserver
 
