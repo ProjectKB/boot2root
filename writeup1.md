@@ -203,9 +203,32 @@ ftp> ls
 ```
 We're in!
 
+### Second way for school
+
+```bash
+$ ftp 192.168.56.102  
+```
+
 ## 6. FTP
 
 We download the two files with the `get` command.
+```bash
+ftp> get README
+local: README remote: README
+200 PORT command successful. Consider using PASV.
+150 Opening BINARY mode data connection for README (96 bytes).
+226 Transfer complete.
+96 bytes received in 0.00 secs (54.1282 kB/s)
+
+ftp> get fun
+local: fun remote: fun
+200 PORT command successful. Consider using PASV.
+150 Opening BINARY mode data connection for fun (808960 bytes).
+226 Transfer complete.
+808960 bytes received in 0.03 secs (26.3440 MB/s)
+```
+
+We get two files:
 ```bash
 $ cat README
 Complete this little challenge and use the result as password for user 'laurie' to login in ssh
@@ -323,6 +346,10 @@ We repeat the above process and obtain **Iheartpwnage** and hash it using **SHA2
 ```
 
 ## 7. SSH Laurie
+
+```bash
+$ ssh laurie@192.168.56.102
+```
 
 We found two files, a text and a binary:
 ```bash
